@@ -8,17 +8,17 @@ export default async function Home() {
     {
       id: 1,
       path: "HomeAppliances",
-      img: "https://www.technolife.com/image/banner_CenterTripletBanners_1ushkB_7c709c6e-7800-421c-8eb8-7e373dfaf395.png",
+      img: "https://banner.storage.c2.liara.space/banner_CenterTripletBanners_1ushkB_7c709c6e-7800-421c-8eb8-7e373dfaf395.png",
     },
     {
       id: 2,
       path: "mobail",
-      img: "https://www.technolife.com/image/banner_CenterTripletBanners_vzxsOg_688078d7-b840-45b9-a0b4-a35c2c0dc4c5.png",
+      img: "https://banner.storage.c2.liara.space/banner_CenterTripletBanners_sUHQ2j_1d6aacbe-e546-44b6-8d18-7ab993ae132c.png",
     },
     {
       id: 3,
       path: "taghizat",
-      img: "https://www.technolife.com/image/banner_CenterTripletBanners_sUHQ2j_1d6aacbe-e546-44b6-8d18-7ab993ae132c.png",
+      img: "https://banner.storage.c2.liara.space/banner_CenterTripletBanners_sUHQ2j_1d6aacbe-e546-44b6-8d18-7ab993ae132cn.png",
     },
   ];
 
