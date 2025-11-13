@@ -1,6 +1,5 @@
 import Laptop from "@/models/laptop";
 import { connectDB } from "@/utils/conectDB";
-import mongoose from "mongoose";
 export const dynamic = "force-dynamic";
 
 export async function GET(): Promise<Response> {
@@ -17,7 +16,7 @@ export async function GET(): Promise<Response> {
     }
 
     return Response.json(laptop, { status: 200 });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error(" خطا در /api/phone:", err);
     return Response.json(
       { error: "خطا در دریافت داده‌ها از دیتابیس" },

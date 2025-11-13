@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
 
-export async function GET(req : Request) {
+export async function GET() {
   const ed = await cookies()
   const token = ed.get("token")?.value
   const secret = process.env.JWT_SECRET;  

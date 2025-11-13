@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { Drawer, Button, Menu } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
+import Link from "next/link";
 
 export default function HamburgerMenu() {
   const [open, setOpen] = useState(false);
   const items = [
-    { key: "home", label: <a href="/">خانه</a> },
-    { key: "mobile", label: <a href="/mobail">موبایل</a> },
-    { key: "laptop", label: <a href="/laptop">لپ‌تاپ</a> },
-    { key: "console", label: <a href="/console">کنسول</a> },
-    { key: "login", label: <a href="/login">ورود</a> },
+    { key: "home", label: <Link href="/">خانه</Link> },
+    { key: "mobile", label: <Link href="/mobail">موبایل</Link> },
+    { key: "laptop", label: <Link href="/laptop">لپ‌تاپ</Link> },
+    { key: "console", label: <Link href="/console">کنسول</Link> },
+    { key: "login", label: <Link href="/login">ورود</Link> },
   ];
 
   return (

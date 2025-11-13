@@ -12,7 +12,7 @@ type PageProps = {
   category: string;
   params: {
     id: string;
-    [key: string]: any;
+    [key: string]: unknown;
   };
 };
 
@@ -28,11 +28,9 @@ async function page({
   const {id} = params;
  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ""}/api/networkEquipment`);
 const data = await res.json();
-const item = data.find((item: any) => item._id === id);
+const item = data.find((item: PageProps) => item._id === id);
   const cartHandler = async () => {
     const productData = { _id, name, image, price, desc, category };
-    const res = await fetch("/api/getToken", { credentials: "include" });
-    const data = await res.json();
 
     await fetch("/api/AddToCart", {
       method: "post",

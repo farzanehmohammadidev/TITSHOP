@@ -1,10 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  experimental: {},
   images: {
     remotePatterns: [
       {
@@ -16,7 +12,8 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "pspro.ir",
         pathname: "/**",
-      },{
+      },
+      {
         protocol: "https",
         hostname: "psnex.ir",
         pathname: "/**",

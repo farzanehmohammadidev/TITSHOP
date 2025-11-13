@@ -12,8 +12,6 @@ interface Phone {
 }
  function Phone() {
    const [Phones, setPhones] = useState<Phone[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
  useEffect(() => {
     async function fetchPhones() {
       try {
@@ -29,12 +27,9 @@ interface Phone {
 
         const phoneData: Phone[] = await phoneRse.json();
         setPhones(phoneData);
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error(err);
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
+      } 
     }
 
     fetchPhones();

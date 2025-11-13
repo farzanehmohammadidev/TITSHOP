@@ -12,8 +12,6 @@ interface Laptop {
 }
 function Laptop() {
   const [laptops, setLaptops] = useState<Laptop[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   useEffect(() => {
     async function fetchLaptops() {
       try {
@@ -29,12 +27,9 @@ function Laptop() {
 
         const laptopData: Laptop[] = await laptopRse.json();
         setLaptops(laptopData);
-      } catch (err: any) {
-        console.error(err);
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
+      } catch {
+        console.error("err");
+      } 
     }
 
     fetchLaptops();

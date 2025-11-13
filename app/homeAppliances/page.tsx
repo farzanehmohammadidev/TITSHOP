@@ -10,11 +10,9 @@ interface homeAppliances {
   desc: string;
   category: string;
 }
- function HomeAppliances() {
-   const [homeAppliancess, sethomeAppliancess] = useState<homeAppliances[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
- useEffect(() => {
+function HomeAppliances() {
+  const [homeAppliancess, sethomeAppliancess] = useState<homeAppliances[]>([]);
+  useEffect(() => {
     async function fetchhomeAppliancess() {
       try {
         const homeAppliancesRse = await fetch(
@@ -24,16 +22,15 @@ interface homeAppliances {
 
         if (!homeAppliancesRse.ok) {
           const text = await homeAppliancesRse.text();
-          throw new Error(`Request failed: ${homeAppliancesRse.status} - ${text}`);
+          throw new Error(
+            `Request failed: ${homeAppliancesRse.status} - ${text}`
+          );
         }
 
         const laptopData: homeAppliances[] = await homeAppliancesRse.json();
         sethomeAppliancess(laptopData);
-      } catch (err: any) {
-        console.error(err);
-        setError(err.message);
-      } finally {
-        setLoading(false);
+      } catch {
+        console.error("error");
       }
     }
 
@@ -42,12 +39,12 @@ interface homeAppliances {
   return (
     <>
       <ul className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
-      {homeAppliancess.map((item) => (
-        <li key={item._id}>
-          <ProductCard {...item} />
-        </li>
-      ))}
-    </ul>
+        {homeAppliancess.map((item) => (
+          <li key={item._id}>
+            <ProductCard {...item} />
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

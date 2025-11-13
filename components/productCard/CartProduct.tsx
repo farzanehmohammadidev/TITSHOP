@@ -1,8 +1,6 @@
 "use client";
 import styles from "@/app/ProductCard.module.css";
 import Image from "next/image";
-import React, { useState } from "react";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 interface ProductProps {
   _id: string;
@@ -10,15 +8,13 @@ interface ProductProps {
   image: string;
   price: string;
   desc: string;
+  email:string;
   category: string;
 }
 
-const CartProduct: React.FC<ProductProps> = ({ _id, name, image, price, email,desc }: any) => {
-  const [loading, setLoading] = useState(false);
-
+const CartProduct: React.FC<ProductProps> = ({ _id, name, image, price, email,desc }:ProductProps ) => {
   const handleDelete = async () => {
     try {
-      setLoading(true);
 
       const res = await fetch("/api/delete", {
         method: "DELETE",
@@ -38,12 +34,10 @@ const CartProduct: React.FC<ProductProps> = ({ _id, name, image, price, email,de
       console.error("خطا در حذف محصول:", err);
       alert("مشکلی پیش آمد، لطفاً دوباره تلاش کنید.");
     } finally {
-      setLoading(false);
     }
   };
 const handlePurchase = async () => {
     try {
-      setLoading(true);
       const res = await fetch("/api/purchase", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -61,7 +55,6 @@ console.log(data);
     } catch (err) {
       console.error(err);
     } finally {
-      setLoading(false);
     }
   };
   return (

@@ -1,17 +1,16 @@
 import Cart from "@/models/cart";
 import { verify, JwtPayload } from "jsonwebtoken";
-import mongoose from "mongoose";
-import { getCookie } from "cookies-next";
 import { connectDB } from "@/utils/conectDB";
+import { cookies } from "next/headers";
 export const dynamic = "force-dynamic";
 
-export async function POST(req: any): Promise<Response> {
+export async function POST(req: Request): Promise<Response> {
   try {
     await connectDB();
-    const token = await getCookie("token", { req });
-    const secret = process.env.JWT_SECRET;
+const ed = await cookies()
+  const token = ed.get("token")?.value   
+   const secret = process.env.JWT_SECRET;
     if (!token || !secret) throw new Error("توکن موجود نیست");
-
     const decoded = verify(token, secret) as JwtPayload;
     const email: string = decoded.email!;
     const product: {
@@ -40,10 +39,19 @@ export async function POST(req: any): Promise<Response> {
       { message: "محصول با موفقیت به سبد خرید اضافه شد" },
       { status: 200 }
     );
-  } catch (err: any) {
-    return Response.json(
-      { message: err.message || "خطا در افزودن به سبد خرید" },
-      { status: 500 }
-    );
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      console.log(err.message);
+      return Response.json(
+        { error: err.message },
+        { status: 500 }
+      );
+    } else {
+      console.log("Unknown error", err);
+      return Response.json(
+        { error: "خطای ناشناخته رخ داده است" },
+        { status: 500 }
+      );
+    }
   }
 }

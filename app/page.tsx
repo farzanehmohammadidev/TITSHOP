@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Homebaner from "@/components/Homebaner/Homebaner"
+
+
 export default async function Home() {
   const tab = [
     {
@@ -26,7 +28,7 @@ export default async function Home() {
        <Homebaner />
       </div>
 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
-  {tab.map((item: any) => (
+  {tab.map((item) => (
     <div key={item.id} className="w-full">
       <Link href={item.path}>
         <Image
@@ -34,7 +36,7 @@ export default async function Home() {
           width={1200}
           height={400}
           className="w-full h-auto rounded-lg"
-          alt={item.title || ""}
+          alt={item.img || ""}
         />
       </Link>
     </div>

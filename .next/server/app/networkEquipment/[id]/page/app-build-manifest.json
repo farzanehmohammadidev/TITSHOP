@@ -1,0 +1,18 @@
+{
+  "pages": {
+    "/networkEquipment/[id]/page": [
+      "static/chunks/a5e66fad8b2d4a26.css",
+      "static/chunks/8b6b91b7240e82ec.js",
+      "static/chunks/b981605b31888f48.js",
+      "static/chunks/7dd66bdf8a7e5707.js",
+      "static/chunks/a944e4e6ea862741.css",
+      "static/chunks/517ffebf637e040b.js",
+      "static/chunks/f2441e65e5af3638.js",
+      "static/chunks/522518d740397639.js",
+      "static/chunks/2008ffcf9e5b170c.js",
+      "static/chunks/111c2078ff56494a.js",
+      "static/chunks/8082ab48faca5ea1.js",
+      "static/chunks/turbopack-f5223421c13e3ec9.js"
+    ]
+  }
+}

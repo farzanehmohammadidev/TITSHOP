@@ -6,7 +6,7 @@ export async function connectDB() {
   if (isConnected) return;
 
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/TITShop", {
+    const conn = await mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost:27017/TITShop", {
       serverSelectionTimeoutMS: 5000, 
     });
     isConnected = true;

@@ -2,7 +2,7 @@ import User from "@/models/user";
 import { connectDB } from "@/utils/conectDB";
 export const dynamic = "force-dynamic";
 
-export async function GET(req: Request): Promise<Response> {
+export async function GET(): Promise<Response> {
   try {
    await connectDB()
     const user = await User.find();

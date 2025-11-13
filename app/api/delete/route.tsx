@@ -4,6 +4,14 @@ import { cookies } from "next/headers";
 import { verify, JwtPayload } from "jsonwebtoken";
 import { connectDB } from "@/utils/conectDB";
 export const dynamic = "force-dynamic";
+interface Iprop {
+  _id: string;
+  name: string;
+  image: string;
+  price: string;
+  desc: string;
+  category: string;
+}
 
 export async function DELETE(req: Request) {
   try {
@@ -37,7 +45,7 @@ export async function DELETE(req: Request) {
     }
 
     const index = cart.cart.findIndex(
-      (item: any) => item._id?.toString() === productId
+      (item: Iprop) => item._id?.toString() === productId
     );
 
     if (index === -1) {
@@ -51,11 +59,7 @@ export async function DELETE(req: Request) {
     await cart.save();
 
     return NextResponse.json({ message: "محصول با موفقیت حذف شد" });
-  } catch (err: any) {
-    console.error("خطا در حذف محصول:", err.message || err);
-    return NextResponse.json(
-      { error: err.message || "خطا در سرور" },
-      { status: 500 }
-    );
+  } catch {
+    return NextResponse.json("خطا در سرور", { status: 500 });
   }
 }

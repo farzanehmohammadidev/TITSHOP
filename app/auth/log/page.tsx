@@ -2,10 +2,6 @@
 import React from "react";
 import styles from "@/app/form.module.css";
 import { useRouter } from "next/navigation";
-interface RegisterForm {
-  email: string;
-  password: string;
-}
 
 const Log: React.FC = () => {
   const router = useRouter();

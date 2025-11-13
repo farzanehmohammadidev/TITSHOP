@@ -1,0 +1,3 @@
+module.exports=[38695,a=>{"use strict";a.s(["default",()=>f]);var b=a.i(87924),c=a.i(71987),d=a.i(38246),e=a.i(46870);let f=function(){let a=(0,e.useMediaQuery)({maxWidth:1199});return(0,b.jsx)("div",{style:{marginBottom:"30px"},children:a?null:(0,b.jsx)(d.default,{href:"mobail",className:"text-black",children:(0,b.jsx)(c.default,{width:1200,height:400,className:"w-full h-auto",src:"https://www.technolife.com/image/banner_SlideBanner_FdinDt_c85f0007-5dc4-4bb9-8d8b-039acca7310a.gif",alt:""})})})}}];
+
+//# sourceMappingURL=components_Homebaner_Homebaner_tsx_4bb2f204._.js.map

@@ -1,6 +1,5 @@
 import Console from "@/models/consoles";
 import { connectDB } from "@/utils/conectDB";
-import mongoose from "mongoose";
 export const dynamic = "force-dynamic";
 
 export async function GET(): Promise<Response> {

@@ -16,7 +16,7 @@ export async function GET(): Promise<Response> {
     }
 
     return Response.json(homeAppliances, { status: 200 });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error(" خطا در /api/homeAppliances:", err);
     return Response.json(
       { error: "خطا در دریافت داده‌ها از دیتابیس" },

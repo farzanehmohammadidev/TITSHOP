@@ -66,6 +66,7 @@ console.log(await bcrypt.compare(password, user.password))
     revalidatePath("/");
     return response;
 
-  } catch (err: any) {
-return NextResponse.json({ success: false, error: "خطا در سرور" }, { status: 500 });  }
+  } catch{
+ console.log("یک خطا رخ داد");
+  return NextResponse.json({ error: "خطای ناشناخته" }, { status: 500 });  }
 }

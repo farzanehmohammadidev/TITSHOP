@@ -16,7 +16,7 @@ export async function GET(): Promise<Response> {
     }
 
     return Response.json(phones, { status: 200 });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error(" خطا در /api/phone:", err);
     return Response.json(
       { error: "خطا در دریافت داده‌ها از دیتابیس" },

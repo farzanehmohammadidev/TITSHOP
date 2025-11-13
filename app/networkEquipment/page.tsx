@@ -11,10 +11,8 @@ interface networkEquipment {
   desc: string;
   category: string;
 }
-async function NetworkEquipment() {
+ function NetworkEquipment() {
    const [networkEquipments, setNetworkEquipments] = useState<networkEquipment[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
  useEffect(() => {
     async function fetchnetworkEquipments() {
       try {
@@ -30,11 +28,8 @@ async function NetworkEquipment() {
 
         const networkEquipmentData: networkEquipment[] = await networkEquipmentRse.json();
         setNetworkEquipments(networkEquipmentData);
-      } catch (err: any) {
-        console.error(err);
-        setError(err.message);
-      } finally {
-        setLoading(false);
+      } catch{
+        console.error("err");
       }
     }
 

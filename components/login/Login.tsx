@@ -1,18 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from "@/app/form.module.css";
 import { useRouter } from "next/navigation";
 import { action_Data } from "./action";
-interface RegisterForm {
-  email: string;
-  password: string;
-}
 
 const Login: React.FC = () => {
-  const [formData, setFormData] = useState<RegisterForm>({
-    email: "",
-    password: "",
-  });
    const router = useRouter();
 useEffect(()=>{
  const checkToken = async () => {
@@ -25,7 +17,7 @@ useEffect(()=>{
       }
     };
   checkToken()
-  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
  
   
