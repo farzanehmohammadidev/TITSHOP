@@ -2,7 +2,7 @@ var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/mobail/[
 R.c("server/chunks/ssr/[root-of-the-server]__c3d857e2._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_56e32c9c._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_214a66fc._.js")
-R.c("server/chunks/ssr/_ba420713._.js")
+R.c("server/chunks/ssr/_6ff01382._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_9774470f._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_45780354.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_15817684.js")

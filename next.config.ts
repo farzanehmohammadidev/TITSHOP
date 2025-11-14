@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
         hostname: "psnex.ir",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "banner.storage.c2.liara.space",
+        pathname: "/**",
+      },
     ],
   },
 };

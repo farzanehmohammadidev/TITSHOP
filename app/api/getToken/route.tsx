@@ -1,26 +1,12 @@
-import { cookies } from "next/headers";
-import { verify, JwtPayload } from "jsonwebtoken";
-export const dynamic = "force-dynamic";
-
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 
 export async function GET() {
-  const ed = await cookies()
-  const token = ed.get("token")?.value
-  const secret = process.env.JWT_SECRET;  
-  console.log(ed);
-  
-  try {
+  const token = (await cookies()).get("token")?.value;
 
-  if (!token || !secret) {
-    return NextResponse.json("توکن یا سکرت غلطه");
+  if (!token) {
+    return NextResponse.json({ isLoggedIn: false });
   }
 
-    const decoded = verify(token, secret) as JwtPayload;
-
-    if (!decoded.email) return NextResponse.json("ایمیل وجود ندارد");
-    return NextResponse.json(token);
-  } catch {
-    return NextResponse.json('error server');
-  }
+  return NextResponse.json({ isLoggedIn: true });
 }

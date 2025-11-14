@@ -1,6 +1,7 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/api/AddToCart/route": "app/api/AddToCart/route.js",
+  "/api/Logout/route": "app/api/Logout/route.js",
   "/api/auth/log/route": "app/api/auth/log/route.js",
   "/api/auth/register/route": "app/api/auth/register/route.js",
   "/api/client/route": "app/api/client/route.js",

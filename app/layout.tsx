@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import LayoutDsk from "@/components/Desktop/LayoutDsk/LayoutDsk";
+import IsLoginProvider from "@/context/provider/IsLogProvider";
 
 
 export const metadata: Metadata = {
@@ -16,9 +17,11 @@ export default function RootLayout({
   return (
     <html dir="rtl">
       <body className="">
+        <IsLoginProvider>
        <LayoutDsk >
         {children}
        </LayoutDsk>
+        </IsLoginProvider>
       </body>
     </html>
   );
